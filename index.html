@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📦 Formulario de Quejas - Paquetería Express</title>
+    <meta  name="description" content="Formulario para recibir quejas y generar JSON para la API" />
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>📦 Formulario de Quejas - Paquetería Express</h1>
+        <p class="lead">
+          Completa el formulario para registrar su queja. Los campos marcados con <span class="required">*</span> son obligatorios.
+        </p>
+
+        <form>
+          <div class="field">
+            <label for="nombre">Nombre completo <span class="required">*</span></label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ej. Jhon Fredy" required/>
+            <div class="error" id="error-nombre" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="required">*</span></label>
+            <input id="email" name="email" type="email" placeholder="tu@correo.com" required/>
+            <div class="error" id="error-email" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="guia">Número de guía <span class="required">*</span></label>
+            <input id="guia" name="guia" type="text" placeholder="ABC123" required/>
+            <div class="error" id="error-guia" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="tipoProblema">Tipo de problema</label>
+            <select id="tipoProblema" name="tipoProblema">
+              <option value="retraso">Retraso en entrega</option>
+              <option value="dañado">Paquete dañado</option>
+              <option value="perdido">Paquete perdido</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+            <div class="field">
+            <label for="tipoProducto">Tipo de producto</label>
+            <select id="tipoProducto" name="tipoProducto">
+              <option value="documentos">Documentos</option>
+              <option value="electronicos">Electrónicos</option>        
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="fechaEnvio">Fecha de envío <span class="required">*</span></label>
+            <input id="fechaEnvio" name="fechaEnvio" type="date" required>
+            <div class="error" id="error-fecha" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+              <label for="archivo">Adjuntar archivo <span class="small">(jpg, png, pdf; máx 2MB)</span></label>
+              <input id="archivo" name="archivo" type="file" accept="image/jpeg,image/png,application/pdf">
+              <div class="error" id="error-archivo" aria-live="polite"></div>
+              <div class="note">Opcional: adjunta una imagen o PDF que respalde tu queja.</div>
+          </div>
+
+          <div class="field full" >
+           <label for="descripcion">Descripción</label>
+           <textarea id="descripcion" nombre="descripcion" type="text" placeholder="Describe el problema con al menos 20 caracteres" required></textarea>
+           <div class="error" id="error-descripcion" aria-live="polite"></div>
+          </div>
+
+        <div class="full">
+          <div class="actions">
+            <button type="submit">Generar JSON</button>
+            <button type="button" class="secondary" id="btnClear">Limpiar</button>            
+            <div id="formStatus" class="small" aria-live="polite"></div>
+          </div>
+
+          <div>
+            <label class="small">JSON generado (listo para enviar):</label>
+            <pre id="jsonPreview" class="json">{ }</pre>
+          </div>
+        </div>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
