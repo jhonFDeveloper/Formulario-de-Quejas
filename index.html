@@ -9,13 +9,13 @@
   </head>
   <body>
     <div class="container">
+
       <div class="card">
         <h1>📦 Formulario de Quejas - Paquetería Express</h1>
-        <p class="lead">
-          Completa el formulario para registrar su queja. Los campos marcados con <span class="required">*</span> son obligatorios.
-        </p>
+        <p class="lead">Completa el formulario para registrar su queja. Los campos marcados con <span class="required">*</span> son obligatorios.</p>
 
-        <form>
+        <form id="complaintForm" novalidate>
+
           <div class="field">
             <label for="nombre">Nombre completo <span class="required">*</span></label>
             <input id="nombre" name="nombre" type="text" placeholder="Ej. Jhon Fredy" required/>
@@ -44,7 +44,7 @@
             </select>
           </div>
 
-            <div class="field">
+          <div class="field">
             <label for="tipoProducto">Tipo de producto</label>
             <select id="tipoProducto" name="tipoProducto">
               <option value="documentos">Documentos</option>
@@ -75,8 +75,8 @@
         <div class="full">
           <div class="actions">
             <button type="submit">Generar JSON</button>
-            <button type="button" class="secondary" id="btnClear">Limpiar</button>            
-            <div id="formStatus" class="small" aria-live="polite"></div>
+            <button type="button" class="secondary" id="btnLimpiar">Limpiar</button>            
+            <div id="estadoFormulario" class="small" aria-live="polite"></div>
           </div>
 
           <div>
