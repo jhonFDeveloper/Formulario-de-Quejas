@@ -68,3 +68,55 @@ function validarGuia() {
     return true;
 }
 
+function validarFecha() {
+ const v = fecha.value;
+
+ if (!v){
+    errFecha.textContent = "La fecha del envío es obligatoria";
+    return false;
+ }
+ errFecha.textContent = "";
+ return true;
+}
+
+function validarDescripcion() {
+    const v = descripcion.value.trim();
+
+    if (!v) {
+        errDescripcion.textContent = "La descripción es obligatoria";
+        return false;
+    }
+
+    if (v.length < 20) {
+        errDescripcion.textContent = `La descripción debe tener al menos 20 caracteres. (actual: ${v.length})`;
+        return false;
+    }
+    errDescripcion.textContent = "";
+    return true;
+
+}
+
+function validarArchivo() {
+    const file = archivo.file[0];
+
+    if (!file) {
+        errArchivo.textContent = "";
+        return true;
+    }
+
+    const formatoPermitido = ["image/jpeg","image/png","application/pdf"];
+
+    if (!formatoPermitido.includes (file.type)) {
+        errArchivo.textContent = "Tipo de archivo no permitido. Usa jpeg, png o pdf.";
+        return false;
+    }
+
+    if (file.size > tamañoMaximoArchivo) {
+        errArchivo.textContent = "El archivo supera el tamaño máximo 2MB";
+        return false;
+    }
+
+    errArchivo.textContent = "";
+    return true;
+}
+
