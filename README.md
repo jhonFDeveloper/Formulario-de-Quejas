@@ -40,6 +40,6 @@ El formulario valida en tiempo real:
 
 1. **Clona el repositorio**
    ```bash
-   git clone https://github.com/tuusuario/formulario-quejas.git
+   git clone https://github.com/jhonFDeveloper/Formulario-de-Quejas.git
 
 
