@@ -7,31 +7,31 @@
     <meta  name="description" content="Formulario para recibir quejas y generar JSON para la API" />
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body>
-    <div class="container">
 
+  <body>
+    <div class="container">      
       <div class="card">
         <h1>📦 Formulario de Quejas - Paquetería Express</h1>
         <p class="lead">Completa el formulario para registrar su queja. Los campos marcados con <span class="required">*</span> son obligatorios.</p>
 
-        <form id="complaintForm" novalidate>
+        <form id="completarFromulario" novalidate>
 
           <div class="field">
             <label for="nombre">Nombre completo <span class="required">*</span></label>
             <input id="nombre" name="nombre" type="text" placeholder="Ej. Jhon Fredy" required/>
-            <div class="error" id="error-nombre" aria-live="polite"></div>
+            <div class="error" id="error-nombre"></div>
           </div>
 
           <div class="field">
             <label for="email">Email <span class="required">*</span></label>
             <input id="email" name="email" type="email" placeholder="tu@correo.com" required/>
-            <div class="error" id="error-email" aria-live="polite"></div>
+            <div class="error" id="error-email"></div>
           </div>
 
           <div class="field">
             <label for="guia">Número de guía <span class="required">*</span></label>
             <input id="guia" name="guia" type="text" placeholder="ABC123" required/>
-            <div class="error" id="error-guia" aria-live="polite"></div>
+            <div class="error" id="error-guia"></div>
           </div>
 
           <div class="field">
@@ -56,27 +56,27 @@
           <div class="field">
             <label for="fechaEnvio">Fecha de envío <span class="required">*</span></label>
             <input id="fechaEnvio" name="fechaEnvio" type="date" required>
-            <div class="error" id="error-fecha" aria-live="polite"></div>
+            <div class="error" id="error-fecha"></div>
           </div>
 
           <div class="field">
               <label for="archivo">Adjuntar archivo <span class="small">(jpg, png, pdf; máx 2MB)</span></label>
               <input id="archivo" name="archivo" type="file" accept="image/jpeg,image/png,application/pdf">
-              <div class="error" id="error-archivo" aria-live="polite"></div>
+              <div class="error" id="error-archivo"></div>
               <div class="note">Opcional: adjunta una imagen o PDF que respalde tu queja.</div>
           </div>
 
           <div class="field full" >
            <label for="descripcion">Descripción</label>
            <textarea id="descripcion" nombre="descripcion" type="text" placeholder="Describe el problema con al menos 20 caracteres" required></textarea>
-           <div class="error" id="error-descripcion" aria-live="polite"></div>
+           <div class="error" id="error-descripcion"></div>
           </div>
 
         <div class="full">
           <div class="actions">
             <button type="submit">Generar JSON</button>
-            <button type="button" class="secondary" id="btnLimpiar">Limpiar</button>            
-            <div id="estadoFormulario" class="small" aria-live="polite"></div>
+            <button type="button" class="secundario" id="btnLimpiar">Limpiar</button>            
+            <div id="estadoFormulario" class="small"></div>
           </div>
 
           <div>
@@ -88,5 +88,6 @@
         </form>
       </div>
     </div>
+    <script src="./js/main.js"></script>
   </body>
 </html>

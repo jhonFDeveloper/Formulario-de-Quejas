@@ -97,7 +97,7 @@ button {
     cursor: pointer;
 }
 
-button.secondary {
+button.secundario {
     background-color: #eef4ff;
     color: #0f62fe;
     border: 1px solid rgba(15,98,254,0.12);
